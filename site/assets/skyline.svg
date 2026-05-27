@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200" preserveAspectRatio="xMidYMax meet">
+  <g fill="#ffffff" fill-opacity="0.9">
+    <!-- left building cluster -->
+    <rect x="0" y="120" width="38" height="80"/>
+    <rect x="42" y="96" width="30" height="104"/>
+    <rect x="76" y="134" width="26" height="66"/>
+    <rect x="106" y="108" width="34" height="92"/>
+    <rect x="120" y="86" width="10" height="22"/>
+    <rect x="146" y="140" width="22" height="60"/>
+    <!-- tall tower with antenna -->
+    <rect x="176" y="70" width="40" height="130"/>
+    <rect x="192" y="48" width="8" height="22"/>
+    <rect x="222" y="128" width="28" height="72"/>
+    <rect x="256" y="112" width="30" height="88"/>
+
+    <!-- Sydney Opera House sails -->
+    <path d="M300 200 C 318 150, 338 138, 356 200 Z"/>
+    <path d="M330 200 C 350 142, 372 128, 392 200 Z"/>
+    <path d="M362 200 C 384 134, 408 120, 430 200 Z"/>
+    <path d="M398 200 C 420 150, 442 142, 460 200 Z"/>
+
+    <!-- Harbour Bridge -->
+    <g fill-opacity="0.82">
+      <path d="M486 200 L486 150 Q650 60 814 150 L814 200 L800 200 L800 158 Q650 84 500 158 L500 200 Z"/>
+      <rect x="496" y="92" width="10" height="66"/>
+      <rect x="794" y="92" width="10" height="66"/>
+      <rect x="640" y="70" width="6" height="40"/>
+      <rect x="654" y="70" width="6" height="40"/>
+      <g stroke="#ffffff" stroke-width="3" stroke-opacity="0.7">
+        <line x1="540" y1="123" x2="540" y2="150"/>
+        <line x1="580" y1="106" x2="580" y2="150"/>
+        <line x1="620" y1="96" x2="620" y2="150"/>
+        <line x1="680" y1="96" x2="680" y2="150"/>
+        <line x1="720" y1="106" x2="720" y2="150"/>
+        <line x1="760" y1="123" x2="760" y2="150"/>
+      </g>
+    </g>
+
+    <!-- right CBD cluster -->
+    <rect x="840" y="104" width="32" height="96"/>
+    <rect x="876" y="128" width="24" height="72"/>
+    <rect x="904" y="80" width="40" height="120"/>
+    <rect x="920" y="58" width="8" height="22"/>
+    <rect x="950" y="120" width="28" height="80"/>
+    <rect x="984" y="100" width="34" height="100"/>
+    <rect x="1022" y="134" width="24" height="66"/>
+    <rect x="1050" y="96" width="36" height="104"/>
+    <rect x="1090" y="118" width="28" height="82"/>
+    <rect x="1122" y="138" width="24" height="62"/>
+    <rect x="1150" y="110" width="34" height="90"/>
+    <rect x="1186" y="128" width="14" height="72"/>
+  </g>
+</svg>
