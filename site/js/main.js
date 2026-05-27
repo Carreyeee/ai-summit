@@ -12,7 +12,7 @@
      Tickets / Contact sections instead.
      ===================================================================== */
   const CONFIG = {
-    eventbriteUrl: ""
+    eventbriteUrl: "https://www.eventbrite.com.au/e/2026-tickets-1990168493538"
   };
 
   /* ---------- Speakers (easy to maintain) ---------- */
@@ -46,51 +46,39 @@
   /* ---------- Chinese dictionary (keys = data-i18n) ---------- */
   const ZH = {
     "brand.sub": "悉尼 2026 · 由 AFN 主办",
-    "nav.about": "关于峰会", "nav.experience": "峰会体验", "nav.agenda": "议程",
+    "nav.about": "关于峰会", "nav.agenda": "议程",
     "nav.speakers": "嘉宾", "nav.attend": "参会理由", "nav.tickets": "门票",
     "nav.sponsor": "赞助", "nav.contact": "联系", "nav.register": "立即注册",
 
     "hero.eyebrow": "澳大利亚财经见闻（AFN）呈献",
     "hero.title": "2026 悉尼人工智能<br>商业应用峰会",
-    "hero.tagline": "AI应用，解锁企业增长新引擎",
-    "hero.sub": "让AI从“技术可能”走向“商业可行”——从认知到行动。",
+    "hero.tagline": "让 AI 不再停留于概念，而是真正驱动增长。",
     "hero.date": "2026年8月14日", "hero.venue": "悉尼国际会议中心 ICC Sydney", "hero.host": "AFN 主办",
     "hero.cta1": "立即购票", "hero.cta2": "成为赞助商",
-    "hero.strip": "上午洞察 · 下午对接 · 傍晚社交",
+    "hero.scroll": "向下了解",
     "cd.days": "天", "cd.hours": "时", "cd.mins": "分", "cd.secs": "秒",
 
     "stat.reach": "AFN 受众触达", "stat.attendees": "预计参会人数", "stat.vips": "受邀 VIP 嘉宾",
     "stat.speakers": "演讲与圆桌嘉宾", "stat.communities": "互联社群",
 
-    "about.eyebrow": "关于峰会", "about.title": "AI 真实落地，驱动商业增长",
-    "about.p1": "2026悉尼人工智能商业应用峰会是一场以商业落地为核心的高端AI主题峰会，面向希望理解、评估并采用AI实现商业增长的企业与机构。",
-    "about.p2": "峰会汇聚企业领袖、中小企业、专业人士、投资人、AI解决方案提供商、创新者与战略合作伙伴，交流高管洞察、展示成熟方案、建立高价值商业人脉。",
-    "about.p3": "区别于泛技术类大会，本届峰会聚焦商业应用——AI如何提升生产力、销售、客户互动、运营、团队效能与业务转型。",
-    "about.facts.title": "峰会概览",
+    "about.eyebrow": "关于", "about.title": "这不是又一场技术大会，而是一场真正划算的 AI 商业日。",
+    "about.p1": "用聚焦的一天，看清 AI 到底能为销售、运营、客服与增长做什么——见到真正做事的人，带走一个方向，而不是又一个热词。",
+    "about.p2": "为经营业务的人而办，而不只是为做模型的人。",
+    "about.facts.title": "概览",
     "about.facts.host": "主办方", "about.facts.date": "日期", "about.facts.date.v": "2026年8月14日",
     "about.facts.venue": "地点", "about.facts.format": "形式",
-    "about.facts.format.v": "完整商业日——洞察、方案对接与高端社交",
-    "about.facts.audience": "参会群体", "about.facts.audience.v": "中小企业、企业领袖、AI方案商、投资人与生态伙伴",
+    "about.facts.format.v": "完整一天——洞察、方案与高端社交",
+    "about.facts.audience": "面向", "about.facts.audience.v": "中小企业、企业领袖、AI方案商、投资人与合作伙伴",
 
-    "exp.eyebrow": "一天，三段相连的体验", "exp.title": "以商业成果为核心的完整一天",
-    "exp.m.tag": "上午", "exp.m.title": "洞察与领导力",
-    "exp.m.body": "高管洞察、领导力对话、企业AI案例与方案展示，为全天确立战略方向。",
-    "exp.a.tag": "下午", "exp.a.title": "方案探索与业务对接",
-    "exp.a.body": "现场AI演示、初创与创新展示，以及结构化商务配对，将想法转化为商业机会。",
-    "exp.e.tag": "傍晚", "exp.e.title": "社交酒会与机器人科技",
-    "exp.e.body": "美食美酒的高端社交、前沿机器人科技展，与嘉宾、赞助商、合作伙伴及VIP深度连接。",
-
-    "why.eyebrow": "为何在此刻", "why.title": "采用AI不再是选项——而是竞争优势",
-    "why.body": "高效应用AI的企业正在提升效率、改善客户服务、降低运营成本并开拓新的增长机会。问题已不是“AI是否重要”，而是“如何将AI兴趣转化为切实可行的商业方向”。",
-    "why.kicker": "投入聚焦的一个商业日，节省数月零散调研、选型困惑与错失的机会。",
-    "why.q.title": "企业正在思考的关键问题",
-    "why.q1": "AI如何帮助我的业务？",
-    "why.q2": "哪些AI工具真正适配我们？",
-    "why.q3": "如何应用AI而不浪费时间与金钱？",
-    "why.q4": "AI如何提升销售、市场、运营、财务、人力与客服？",
-    "why.q5": "如何管理AI的风险、隐私与治理？",
+    "why.eyebrow": "为何是现在", "why.title": "AI 一日千里，而多数企业仍卡在同样的四个问题上。",
+    "why.c1.t": "从哪里开始？", "why.c1.d": "AI 应该先切入业务的哪些环节。",
+    "why.c2.t": "哪些工具适合我们？", "why.c2.d": "在海量平台中，找到真正匹配自身业务的那一个。",
+    "why.c3.t": "真价值，还是炒作？", "why.c3.d": "看清 AI 在哪里带来真实回报，又在哪里只是烧钱。",
+    "why.c4.t": "该信谁来落地？", "why.c4.d": "找到能安全部署、真正交付结果的服务商。",
+    "why.kicker": "用聚焦的一天——省下数月的零散调研、选型困惑与错失的机会。",
 
     "agenda.eyebrow": "议程", "agenda.title": "峰会议程",
+    "agenda.flow": "上午学习 · 下午探索 · 傍晚连接",
     "agenda.note": "议程为暂定内容，环节、时间与嘉宾以主办方最终确认为准。",
     "agenda.m.period": "上午", "agenda.m.theme": "洞察与领导力",
     "agenda.m1.t": "开幕主旨演讲", "agenda.m1.d": "企业AI应用的未来趋势。",
@@ -111,11 +99,11 @@
 
     "gain.eyebrow": "参会理由", "gain.title": "您将收获什么",
     "gain.1.t": "清晰认知", "gain.1.d": "看清AI在哪些环节创造真实商业价值，又在哪里只是炒作。",
-    "gain.2.t": "商业洞察", "gain.2.d": "了解AI如何支撑生产力、销售、市场、客户互动、运营与转型。",
-    "gain.3.t": "方案发现", "gain.3.d": "对接AI方案提供商，探索适合企业采用的工具、平台与服务。",
-    "gain.4.t": "更优决策", "gain.4.d": "在采用AI工具、自动化平台或实施伙伴前，明确需要权衡的要点。",
-    "gain.5.t": "商业人脉", "gain.5.d": "与企业领袖、创始人、高管、投资人、顾问、创新者及技术供应商建立连接。",
-    "gain.6.t": "团队学习", "gain.6.d": "带回可支撑内部讨论、战略规划与未来AI落地的洞察。",
+    "gain.2.t": "商业洞察", "gain.2.d": "看清AI如何提升销售、客服、运营与生产力。",
+    "gain.3.t": "方案发现", "gain.3.d": "对接服务商，体验真正适合你业务的工具。",
+    "gain.4.t": "更优决策", "gain.4.d": "在买工具或选合作伙伴之前，知道该看什么。",
+    "gain.5.t": "商业人脉", "gain.5.d": "在同一个房间里，与领袖、创始人、投资人和实干者连接。",
+    "gain.6.t": "团队对齐", "gain.6.d": "带团队同行，带回的是共识与优先级，而不只是笔记。",
 
     "who.title": "适合谁参加", "who.sub": "为负责业务增长、生产力、转型、客户互动或技术采用的人士与机构而设计。这不是一场纯技术活动。",
     "who.1": "企业主与创始人", "who.2": "CEO、董事与高级管理者", "who.3": "销售、市场与客服负责人",
@@ -354,6 +342,89 @@
     });
   }
 
+  /* ---------- Hero: animated neural-network canvas ---------- */
+  function initHeroCanvas() {
+    const canvas = $("#heroCanvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const LINK = 132;
+    let w = 0, h = 0, pts = [], raf = null;
+    const mouse = { x: -9999, y: -9999 };
+
+    function build() {
+      const r = canvas.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.max(24, Math.min(96, Math.round((w * h) / 15000)));
+      pts = [];
+      for (let i = 0; i < n; i++) pts.push({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: reduce ? 0 : (Math.random() - 0.5) * 0.35,
+        vy: reduce ? 0 : (Math.random() - 0.5) * 0.35
+      });
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const a of pts) {
+        a.x += a.vx; a.y += a.vy;
+        if (a.x <= 0 || a.x >= w) a.vx *= -1;
+        if (a.y <= 0 || a.y >= h) a.vy *= -1;
+      }
+      for (let i = 0; i < pts.length; i++) {
+        const a = pts[i];
+        for (let j = i + 1; j < pts.length; j++) {
+          const b = pts[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < LINK) {
+            ctx.strokeStyle = "rgba(111,208,255," + (1 - d / LINK) * 0.45 + ")";
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+        const mx = a.x - mouse.x, my = a.y - mouse.y, md = Math.sqrt(mx * mx + my * my);
+        if (md < 170) {
+          ctx.strokeStyle = "rgba(95,149,255," + (1 - md / 170) * 0.55 + ")";
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+        }
+        ctx.fillStyle = "rgba(170,214,255,.9)";
+        ctx.beginPath(); ctx.arc(a.x, a.y, 1.6, 0, 6.2832); ctx.fill();
+      }
+    }
+    function loop() { draw(); raf = requestAnimationFrame(loop); }
+    function start() { if (!raf && !reduce) raf = requestAnimationFrame(loop); }
+    function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+    build(); draw(); start();
+
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { build(); draw(); }, 150); }, { passive: true });
+    const hero = canvas.closest(".hero");
+    if (hero && !reduce) {
+      hero.addEventListener("pointermove", e => {
+        const r = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+      }, { passive: true });
+      hero.addEventListener("pointerleave", () => { mouse.x = -9999; mouse.y = -9999; });
+    }
+    document.addEventListener("visibilitychange", () => { document.hidden ? stop() : start(); });
+  }
+
+  /* ---------- Hero: fade in a real video if assets/hero.mp4 exists ---------- */
+  function initHeroVideo() {
+    const v = $("#heroVideo");
+    if (!v) return;
+    v.addEventListener("loadeddata", () => { if (v.readyState >= 2) v.classList.add("ready"); });
+    const src = v.querySelector("source");
+    if (src) src.addEventListener("error", () => v.remove());
+  }
+
   /* ---------- Init ---------- */
   document.addEventListener("DOMContentLoaded", () => {
     renderLogos();
@@ -364,6 +435,8 @@
     initNav();
     initTicketing();
     initTicketToggle();
+    initHeroCanvas();
+    initHeroVideo();
     initObservers();
   });
 })();

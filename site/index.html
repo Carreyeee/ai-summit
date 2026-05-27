@@ -37,7 +37,6 @@
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#experience" data-i18n="nav.experience">Experience</a>
         <a href="#agenda" data-i18n="nav.agenda">Agenda</a>
         <a href="#speakers" data-i18n="nav.speakers">Speakers</a>
         <a href="#attend" data-i18n="nav.attend">Why Attend</a>
@@ -61,16 +60,20 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="hero-bg" aria-hidden="true">
-      <div class="hero-skyline"></div>
-      <div class="hero-orb orb-1"></div>
-      <div class="hero-orb orb-2"></div>
+      <!-- Drop a file at assets/hero.mp4 to use a cinematic video background; the animated canvas shows until then. -->
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/share-card.png">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+      <div class="hero-aurora aur-1"></div>
+      <div class="hero-aurora aur-2"></div>
       <div class="dot-grid"></div>
+      <div class="hero-scrim"></div>
     </div>
     <div class="container hero-inner">
       <p class="hero-eyebrow reveal" data-i18n="hero.eyebrow">Australian Financial News presents</p>
       <h1 class="hero-title reveal" data-i18n="hero.title">AI Application Summit<br />Sydney 2026</h1>
-      <p class="hero-tagline reveal" data-i18n="hero.tagline">Empowering Business Growth Through AI Applications</p>
-      <p class="hero-sub reveal" data-i18n="hero.sub">Where practical AI meets real business growth — from AI awareness to business action.</p>
+      <p class="hero-tagline reveal" data-i18n="hero.tagline">Where AI stops being hype — and starts driving growth.</p>
 
       <ul class="hero-meta reveal">
         <li>
@@ -101,11 +104,10 @@
       </div>
     </div>
 
-    <div class="hero-strip">
-      <div class="container">
-        <span data-i18n="hero.strip">Learn in the morning · Explore in the afternoon · Connect in the evening</span>
-      </div>
-    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll to content">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
   </section>
 
   <!-- ============ STATS ============ -->
@@ -122,76 +124,41 @@
   <!-- ============ ABOUT ============ -->
   <section class="section about" id="about">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="about.eyebrow">About the Summit</span>
-        <h2 class="section-title" data-i18n="about.title">Where Practical AI Meets Real Business Growth</h2>
-      </div>
       <div class="about-grid">
         <div class="about-lead reveal">
-          <p data-i18n="about.p1">AI Application Summit 2026 Sydney is a premium, application-led AI business summit designed for organisations seeking to understand, evaluate and adopt AI for commercial growth.</p>
-          <p data-i18n="about.p2">The Summit brings together business leaders, SMEs, professionals, investors, AI solution providers, innovators and strategic partners to exchange executive insights, showcase market-ready solutions and build high-value business connections.</p>
-          <p data-i18n="about.p3">Unlike broad technology conferences, the Summit focuses on business application — how AI can improve productivity, sales, customer engagement, operations, workforce performance and business transformation.</p>
+          <span class="eyebrow" data-i18n="about.eyebrow">About</span>
+          <h2 class="section-title about-title grad-text" data-i18n="about.title">Not another tech conference. A business day about AI that pays off.</h2>
+          <p class="about-p1" data-i18n="about.p1">One focused day to see what AI actually does for sales, operations, service and growth — meet the people building it, and leave with a direction instead of a buzzword.</p>
+          <p class="about-p2" data-i18n="about.p2">Built for the people who run businesses, not just the people who build models.</p>
         </div>
         <aside class="about-facts reveal">
-          <h3 data-i18n="about.facts.title">Event at a glance</h3>
+          <h3 data-i18n="about.facts.title">At a glance</h3>
           <dl>
             <div><dt data-i18n="about.facts.host">Host</dt><dd>Australian Financial News (AFN)</dd></div>
             <div><dt data-i18n="about.facts.date">Date</dt><dd data-i18n="about.facts.date.v">14 August 2026</dd></div>
             <div><dt data-i18n="about.facts.venue">Venue</dt><dd>ICC Sydney</dd></div>
-            <div><dt data-i18n="about.facts.format">Format</dt><dd data-i18n="about.facts.format.v">A full business day — insights, solution discovery &amp; premium networking</dd></div>
-            <div><dt data-i18n="about.facts.audience">Audience</dt><dd data-i18n="about.facts.audience.v">SMEs, business leaders, AI solution providers, investors &amp; ecosystem partners</dd></div>
+            <div><dt data-i18n="about.facts.format">Format</dt><dd data-i18n="about.facts.format.v">One day — insights, solutions &amp; premium networking</dd></div>
+            <div><dt data-i18n="about.facts.audience">For</dt><dd data-i18n="about.facts.audience.v">SMEs, leaders, AI providers, investors &amp; partners</dd></div>
           </dl>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- ============ THREE EXPERIENCES ============ -->
-  <section class="section experience" id="experience">
+  <!-- ============ CHALLENGES (WHY NOW) ============ -->
+  <section class="section why-now" id="why">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="exp.eyebrow">One Day, Three Connected Experiences</span>
-        <h2 class="section-title" data-i18n="exp.title">A Full Day Built Around Business Outcomes</h2>
-      </div>
-      <div class="exp-grid">
-        <article class="exp-card reveal">
-          <span class="exp-tag" data-i18n="exp.m.tag">Morning</span>
-          <h3 data-i18n="exp.m.title">Insight &amp; Leadership</h3>
-          <p data-i18n="exp.m.body">Executive insights, leadership discussions, business AI case studies and solution showcases that set the strategic direction for the day.</p>
-        </article>
-        <article class="exp-card reveal">
-          <span class="exp-tag" data-i18n="exp.a.tag">Afternoon</span>
-          <h3 data-i18n="exp.a.title">Solution Discovery &amp; Engagement</h3>
-          <p data-i18n="exp.a.body">Live AI demonstrations, startup and innovation showcases, and structured business matchmaking that turn ideas into commercial opportunities.</p>
-        </article>
-        <article class="exp-card reveal">
-          <span class="exp-tag" data-i18n="exp.e.tag">Evening</span>
-          <h3 data-i18n="exp.e.title">Cocktail Networking &amp; Robotics</h3>
-          <p data-i18n="exp.e.body">Premium networking with food and beverages, a cutting-edge robotics showcase, and connections with speakers, sponsors, partners and VIP guests.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHY NOW ============ -->
-  <section class="section why-now">
-    <div class="container why-now-grid">
-      <div class="reveal">
         <span class="eyebrow" data-i18n="why.eyebrow">Why Now</span>
-        <h2 class="section-title" data-i18n="why.title">AI adoption is no longer optional — it's a competitive advantage</h2>
-        <p class="lead" data-i18n="why.body">Businesses that apply AI effectively are improving efficiency, enhancing customer service, reducing operational costs and unlocking new growth opportunities. The challenge is no longer whether AI matters — it's knowing how to turn AI interest into practical business direction.</p>
-        <p class="why-kicker" data-i18n="why.kicker">Spend one focused business day to save months of scattered research, vendor confusion and missed opportunities.</p>
+        <h2 class="section-title" data-i18n="why.title">AI is moving fast. Most businesses are stuck on the same four questions.</h2>
       </div>
-      <div class="questions-card reveal">
-        <h3 data-i18n="why.q.title">Key questions businesses are asking</h3>
-        <ul class="q-list">
-          <li data-i18n="why.q1">How can AI help my business?</li>
-          <li data-i18n="why.q2">Which AI tools are relevant to us?</li>
-          <li data-i18n="why.q3">How do we apply AI without wasting time or money?</li>
-          <li data-i18n="why.q4">How can AI improve sales, marketing, operations, finance, HR and customer service?</li>
-          <li data-i18n="why.q5">How do we manage AI risk, privacy and governance?</li>
-        </ul>
+      <div class="challenge-grid">
+        <article class="challenge-card reveal"><span class="ch-no">01</span><h3 data-i18n="why.c1.t">Where do we start?</h3><p data-i18n="why.c1.d">Which parts of the business should AI touch first.</p></article>
+        <article class="challenge-card reveal"><span class="ch-no">02</span><h3 data-i18n="why.c2.t">Which tools fit us?</h3><p data-i18n="why.c2.d">Cutting through a flood of platforms to what actually matches your business.</p></article>
+        <article class="challenge-card reveal"><span class="ch-no">03</span><h3 data-i18n="why.c3.t">Real value, or hype?</h3><p data-i18n="why.c3.d">Knowing where AI returns real money — and where it just burns it.</p></article>
+        <article class="challenge-card reveal"><span class="ch-no">04</span><h3 data-i18n="why.c4.t">Who do we trust to build it?</h3><p data-i18n="why.c4.d">Finding providers who can deploy safely and deliver results.</p></article>
       </div>
+      <p class="why-kicker reveal" data-i18n="why.kicker">One focused day — instead of months of scattered research, vendor confusion and missed opportunities.</p>
     </div>
   </section>
 
@@ -201,6 +168,7 @@
       <div class="section-head reveal">
         <span class="eyebrow" data-i18n="agenda.eyebrow">Programme</span>
         <h2 class="section-title" data-i18n="agenda.title">Summit Agenda</h2>
+        <p class="agenda-flow" data-i18n="agenda.flow">Learn in the morning · Explore in the afternoon · Connect in the evening</p>
         <p class="section-note" data-i18n="agenda.note">Indicative programme. Sessions, timings and speakers are subject to final confirmation by the organiser.</p>
       </div>
 
@@ -276,27 +244,27 @@
         <article class="gain-card reveal">
           <span class="gain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg></span>
           <h3 data-i18n="gain.2.t">Commercial Insight</h3>
-          <p data-i18n="gain.2.d">Learn how AI can support productivity, sales, marketing, customer engagement, operations and transformation.</p>
+          <p data-i18n="gain.2.d">See how AI lifts sales, service, operations and productivity.</p>
         </article>
         <article class="gain-card reveal">
           <span class="gain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
           <h3 data-i18n="gain.3.t">Solution Discovery</h3>
-          <p data-i18n="gain.3.d">Meet AI solution providers and explore tools, platforms and services relevant to business adoption.</p>
+          <p data-i18n="gain.3.d">Meet the providers and try the tools that actually fit your business.</p>
         </article>
         <article class="gain-card reveal">
           <span class="gain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7"/><path d="M12 2a7 7 0 0 1 4 12.7"/><path d="M8 14.7V17h8v-2.3"/></svg></span>
-          <h3 data-i18n="gain.4.t">Better Decision-Making</h3>
-          <p data-i18n="gain.4.d">Understand what to consider before adopting AI tools, automation platforms or implementation partners.</p>
+          <h3 data-i18n="gain.4.t">Better Decisions</h3>
+          <p data-i18n="gain.4.d">Know what to check before you buy a tool or pick a partner.</p>
         </article>
         <article class="gain-card reveal">
           <span class="gain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 20a5 5 0 0 1 6.5-4.8"/></svg></span>
           <h3 data-i18n="gain.5.t">Business Connections</h3>
-          <p data-i18n="gain.5.d">Network with business leaders, founders, executives, investors, advisors, innovators and technology providers.</p>
+          <p data-i18n="gain.5.d">Connect with leaders, founders, investors and builders in one room.</p>
         </article>
         <article class="gain-card reveal">
           <span class="gain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5a1 1 0 0 1 1-1h6v16H5a1 1 0 0 1-1-1Z"/><path d="M20 19V5a1 1 0 0 0-1-1h-6v16h6a1 1 0 0 0 1-1Z"/></svg></span>
-          <h3 data-i18n="gain.6.t">Team Learning</h3>
-          <p data-i18n="gain.6.d">Bring back insights that support internal discussions, strategic planning and future AI implementation.</p>
+          <h3 data-i18n="gain.6.t">Team Alignment</h3>
+          <p data-i18n="gain.6.d">Bring your team and leave with shared priorities, not just notes.</p>
         </article>
       </div>
 
