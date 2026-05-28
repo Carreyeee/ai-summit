@@ -420,9 +420,44 @@
   function initHeroVideo() {
     const v = $("#heroVideo");
     if (!v) return;
-    v.addEventListener("loadeddata", () => { if (v.readyState >= 2) v.classList.add("ready"); });
     const src = v.querySelector("source");
     if (src) src.addEventListener("error", () => v.remove());
+
+    let played = false;
+    const tryPlay = () => {
+      if (played) return;
+      const p = v.play();
+      if (p && typeof p.then === "function") {
+        p.then(() => { played = true; v.classList.add("ready"); })
+         .catch(() => { /* autoplay blocked — will retry on first user gesture */ });
+      } else {
+        played = true; v.classList.add("ready");
+      }
+    };
+
+    // Try as soon as the browser thinks it can play, and again when frames are ready
+    v.addEventListener("canplay", tryPlay);
+    v.addEventListener("loadeddata", tryPlay);
+    // Try once immediately too (covers the case where the cached video is already playable)
+    tryPlay();
+
+    // Fallback: if the browser blocked muted-autoplay on first load, the first
+    // user gesture (move/scroll/touch/key) starts it.
+    const gestureRetry = () => {
+      tryPlay();
+      if (played) {
+        document.removeEventListener("pointerdown", gestureRetry);
+        document.removeEventListener("pointermove", gestureRetry);
+        document.removeEventListener("scroll", gestureRetry);
+        document.removeEventListener("keydown", gestureRetry);
+        document.removeEventListener("touchstart", gestureRetry);
+      }
+    };
+    document.addEventListener("pointerdown", gestureRetry, { passive: true });
+    document.addEventListener("pointermove", gestureRetry, { passive: true });
+    document.addEventListener("scroll", gestureRetry, { passive: true });
+    document.addEventListener("keydown", gestureRetry);
+    document.addEventListener("touchstart", gestureRetry, { passive: true });
   }
 
   /* ---------- Init ---------- */
