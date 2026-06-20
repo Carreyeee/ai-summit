@@ -1,5 +1,5 @@
 /* =====================================================================
-   AI Application Summit Sydney 2026 — interactions + i18n
+   AI Summit Sydney 2026 — interactions + i18n
    ===================================================================== */
 (function () {
   "use strict";
@@ -15,112 +15,124 @@
      ===================================================================== */
   const CONFIG = {
     eventbriteUrl: "https://www.eventbrite.com.au/e/2026-tickets-1990168493538",
-    lumaUrl: ""
+    lumaUrl: "https://luma.com/m86e2kod"
   };
 
-  /* ---------- Speakers (easy to maintain) ---------- */
+  /* ---------- Speakers (easy to maintain) ----------
+     photo: file in assets/speakers/. If it fails to load, the gradient +
+     initials fallback shows automatically. Roles marked TBC are awaiting
+     confirmed titles from the organiser. */
   const SPEAKERS = [
-    { name: "Anoulack Chanthivong", initials: "AC", grad: ["#2f6bf0", "#0d2061"],
+    { name: "Anoulack Chanthivong", initials: "AC", grad: ["#2f6bf0", "#0d2061"], photo: "anoulack-chanthivong.jpg",
       role_en: "Minister for Innovation, Science & Technology", org_en: "NSW Government",
       role_zh: "创新、科学与技术部长", org_zh: "新南威尔士州政府" },
-    { name: "Daniel Roelink", initials: "DR", grad: ["#1b6fb8", "#08307a"],
+    { name: "Daniel Roelink", initials: "DR", grad: ["#1b6fb8", "#08307a"], photo: "daniel-roelink.jpg",
       role_en: "Director, NSW AI Office", org_en: "Digital NSW",
       role_zh: "新南威尔士州人工智能办公室主任", org_zh: "Digital NSW" },
-    { name: "Jihad Dib", initials: "JD", grad: ["#3a57d8", "#0a1747"],
-      role_en: "Minister for AI Applications & Digital Transformation", org_en: "NSW Government",
-      role_zh: "AI应用与数字化转型部长", org_zh: "新南威尔士州政府" },
-    { name: "Jack Zhang", initials: "JZ", grad: ["#2f8fe0", "#123089"],
+    { name: "Jack Zhang", initials: "JZ", grad: ["#2f8fe0", "#123089"], photo: "jack-zhang.jpg",
       role_en: "Founder", org_en: "Airwallex",
       role_zh: "创始人", org_zh: "Airwallex" },
-    { name: "Katherine McConnell", initials: "KM", grad: ["#5b95ff", "#0d2061"],
+    { name: "Katherine McConnell", initials: "KM", grad: ["#5b95ff", "#0d2061"], photo: "katherine-mcconnell.jpg",
       role_en: "Board Director", org_en: "Tech Council of Australia",
       role_zh: "董事", org_zh: "澳大利亚科技委员会" },
-    { name: "Lee Hickin", initials: "LH", grad: ["#1e9ad6", "#0a2a6b"],
+    { name: "Lee Hickin", initials: "LH", grad: ["#1e9ad6", "#0a2a6b"], photo: "lee-hickin.jpg",
       role_en: "Executive Director", org_en: "National AI Centre (Australia)",
       role_zh: "执行总监", org_zh: "澳大利亚国家人工智能中心" },
-    { name: "Liming Zhu", initials: "LZ", grad: ["#2f6bf0", "#072a5e"],
+    { name: "Liming Zhu", initials: "LZ", grad: ["#2f6bf0", "#072a5e"], photo: "liming-zhu.png",
       role_en: "AI Lead, CSIRO Data61 · Professor", org_en: "UNSW",
       role_zh: "CSIRO Data61 人工智能负责人 · 教授", org_zh: "新南威尔士大学" },
-    { name: "Niki Scevak", initials: "NS", grad: ["#3457c8", "#0a1747"],
+    { name: "Niki Scevak", initials: "NS", grad: ["#3457c8", "#0a1747"], photo: "niki-scevak.jpg",
       role_en: "Co-founder & Partner", org_en: "Blackbird Ventures",
-      role_zh: "联合创始人兼合伙人", org_zh: "Blackbird Ventures" }
+      role_zh: "联合创始人兼合伙人", org_zh: "Blackbird Ventures" },
+    { name: "Sachin Shah", initials: "SS", grad: ["#2f6bf0", "#0a2a6b"], photo: "sachin-shah.jpg",
+      role_en: "Speaker", org_en: "Profile to be confirmed",
+      role_zh: "演讲嘉宾", org_zh: "详情待公布" },
+    { name: "Simon Kriss", initials: "SK", grad: ["#1e9ad6", "#0d2061"], photo: "simon-kriss.jpg",
+      role_en: "Speaker", org_en: "Profile to be confirmed",
+      role_zh: "演讲嘉宾", org_zh: "详情待公布" },
+    { name: "Yu Liu", initials: "YL", grad: ["#3457c8", "#123089"], photo: "yu-liu.jpg",
+      role_en: "Speaker", org_en: "Profile to be confirmed",
+      role_zh: "演讲嘉宾", org_zh: "详情待公布" }
   ];
 
   /* ---------- Chinese dictionary (keys = data-i18n) ---------- */
   const ZH = {
-    "brand.sub": "悉尼 2026 · 由 AFN 主办",
-    "nav.about": "关于峰会", "nav.agenda": "议程",
+    "brand.sub": "2026 · 由 AFN 主办",
+    "nav.about": "关于峰会", "nav.framework": "峰会框架", "nav.agenda": "议程",
     "nav.speakers": "嘉宾", "nav.tickets": "门票",
     "nav.contact": "联系", "nav.register": "立即注册",
 
     "hero.eyebrow": "澳大利亚财经见闻（AFN）呈献",
-    "hero.title": "2026 悉尼人工智能<br>商业应用峰会",
-    "hero.tagline": "让 AI 不再停留于概念，而是真正驱动增长。",
-    "hero.date": "2026年8月14日", "hero.venue": "悉尼国际会议中心 ICC Sydney", "hero.host": "AFN 主办",
+    "hero.title": "2026 悉尼<br>人工智能峰会",
+    "hero.tagline": "从能源到智能，从算力到资本。",
+    "hero.sub": "连接政策、基础设施、创新与投资，共建人工智能经济新生态。",
+    "hero.date": "2026年8月14日", "hero.venue": "悉尼，澳大利亚", "hero.host": "AFN 主办",
     "hero.cta1": "立即购票", "hero.cta2": "查看议程",
     "hero.scroll": "向下了解",
     "cd.days": "天", "cd.hours": "时", "cd.mins": "分", "cd.secs": "秒",
 
-    "about.eyebrow": "关于", "about.title": "这不是又一场技术大会，而是一场真正划算的 AI 商业日。",
-    "about.p1": "用聚焦的一天，看清 AI 到底能为销售、运营、客服与增长做什么——见到真正做事的人，带走一个方向，而不是又一个热词。",
-    "about.p2": "为经营业务的人而办，而不只是为做模型的人。",
-    "about.facts.title": "概览",
+    "about.eyebrow": "关于", "about.title": "这不止是一场技术大会，而是一场面向完整AI经济的峰会。",
+    "about.p1": "2026悉尼人工智能峰会是一场面向人工智能经济的高端商业、科技与投资盛会，连接正在建设、投资、监管和应用AI的核心决策者——贯通政策、能源、算力、应用、智能硬件与资本，覆盖澳大利亚与亚太。",
+    "about.p2": "让政策与产业对话，让基础设施与创新协同，让科技与资本相遇。",
+    "about.facts.title": "峰会概览",
     "about.facts.host": "主办方", "about.facts.date": "日期", "about.facts.date.v": "2026年8月14日",
-    "about.facts.venue": "地点", "about.facts.format": "形式",
-    "about.facts.format.v": "完整一天——洞察、方案与高端社交",
-    "about.facts.audience": "面向", "about.facts.audience.v": "中小企业、企业领袖、AI方案商、投资人与合作伙伴",
+    "about.facts.venue": "地点", "about.facts.venue.v": "悉尼，澳大利亚", "about.facts.format": "形式",
+    "about.facts.format.v": "商业 · 科技 · 投资 旗舰峰会",
+    "about.facts.audience": "面向", "about.facts.audience.v": "AI建设者、应用者与生态推动者",
 
-    "why.eyebrow": "为何是现在", "why.title": "AI 一日千里，而多数企业仍卡在同样的四个问题上。",
-    "why.c1.t": "从哪里开始？", "why.c1.d": "AI 应该先切入业务的哪些环节。",
-    "why.c2.t": "哪些工具适合我们？", "why.c2.d": "在海量平台中，找到真正匹配自身业务的那一个。",
-    "why.c3.t": "真价值，还是炒作？", "why.c3.d": "看清 AI 在哪里带来真实回报，又在哪里只是烧钱。",
-    "why.c4.t": "该信谁来落地？", "why.c4.d": "找到能安全部署、真正交付结果的服务商。",
-    "why.kicker": "用聚焦的一天——省下数月的零散调研、选型困惑与错失的机会。",
+    "fw.eyebrow": "峰会框架", "fw.title": "人工智能生态的六大层级。",
+    "fw.note": "一天之内，看清完整价值链——从AI如何被治理、被供能，到如何被构建、被应用、走向物理世界与被资本支持。",
+    "fw.l1.t": "政策治理与信任", "fw.l1.d": "监管与合规、数据治理、网络安全、负责任AI与可信机制。",
+    "fw.l2.t": "能源与电力", "fw.l2.d": "可再生能源、储能、电网稳定，以及数据中心背后的能源需求。",
+    "fw.l3.t": "基础设施与算力", "fw.l3.d": "数据中心、GPU云、主权AI，以及支撑AI规模化的基础设施。",
+    "fw.l4.t": "行业应用", "fw.l4.d": "医疗、金融、地产、企业与自动化等真实落地场景。",
+    "fw.l5.t": "智能科技", "fw.l5.d": "机器人、无人机、自动驾驶、联网设备与智能硬件。",
+    "fw.l6.t": "资本与投资", "fw.l6.d": "风险投资、私募股权、家族办公室、初创与商业化路径。",
 
-    "agenda.eyebrow": "议程", "agenda.title": "峰会议程",
-    "agenda.flow": "上午学习 · 下午探索 · 傍晚连接",
+    "agenda.eyebrow": "议程", "agenda.title": "一整天，贯穿AI完整价值链。",
     "agenda.note": "议程为暂定内容，环节、时间与嘉宾以主办方最终确认为准。",
-    "agenda.m.period": "上午", "agenda.m.theme": "洞察与领导力",
-    "agenda.m1.t": "开幕主旨演讲", "agenda.m1.d": "企业AI应用的未来趋势。",
-    "agenda.m2.t": "高管圆桌讨论", "agenda.m2.d": "AI如何重塑中小企业、提升运营效率与团队生产力。",
-    "agenda.m3.t": "企业AI案例分享", "agenda.m3.d": "AI驱动业务效能提升的真实案例。",
-    "agenda.m4.t": "AI商业方案展示", "agenda.m4.d": "助力增长的实用AI工具与解决方案。",
-    "agenda.m5.t": "高管社交午宴", "agenda.m5.d": "面向领袖与VIP的精准连接。",
-    "agenda.a.period": "下午", "agenda.a.theme": "方案探索与业务对接",
-    "agenda.a1.t": "AI解决方案演示", "agenda.a1.d": "成熟AI工具与平台的现场展示，呈现真实业务应用。",
-    "agenda.a2.t": "初创与创新展示", "agenda.a2.d": "新锐AI企业展示前沿方案与新技术。",
-    "agenda.a3.t": "商务精准配对", "agenda.a3.d": "结构化对接，链接中小企业、AI服务商、投资人与战略伙伴。",
-    "agenda.e.period": "傍晚", "agenda.e.theme": "社交酒会与机器人科技展",
-    "agenda.e1.t": "美食美酒社交酒会", "agenda.e1.d": "在精致氛围中与嘉宾、赞助商、伙伴及VIP轻松交流。",
-    "agenda.e2.t": "前沿机器人科技展", "agenda.e2.d": "现场体验尖端机器人、自动化系统与新兴AI技术。",
+    "ag.r1.t": "签到与欢迎咖啡", "ag.r1.d": "嘉宾签到、领取资料、参观赞助商展示区与会前交流。",
+    "ag.r2.t": "峰会开幕", "ag.r2.d": "介绍峰会主题：连接从能源、算力到应用、智能科技与资本的完整AI生态。",
+    "ag.r3.t": "主办方欢迎致辞", "ag.r3.d": "介绍峰会愿景、参会群体及当日核心议题。",
+    "ag.r4.t": "部长级主旨演讲", "ag.r4.d": "从政府视角探讨AI、创新及澳大利亚在AI经济中的角色。",
+    "ag.r5.t": "开幕圆桌 · 构建澳大利亚AI生态", "ag.r5.d": "政策、数据安全、基础设施准备度与亚太机遇。",
+    "ag.r6.t": "上午茶与交流", "ag.r6.d": "嘉宾交流与创新展示参观。",
+    "ag.r7.t": "第一层 · 为AI供能：能源、电网与可持续", "ag.r7.d": "可再生能源、储能、虚拟电厂与数据中心能源需求。",
+    "ag.r8.t": "第二层 · AI基础设施与算力", "ag.r8.d": "数据中心、云、GPU即服务、主权AI与可扩展算力。",
+    "ag.r9.t": "商务午餐与交流", "ag.r9.d": "高层商务交流与合作伙伴介绍。",
+    "ag.r10.t": "第三层 · 跨行业AI应用", "ag.r10.d": "医疗健康、金融服务、房地产、专业服务与自动化。",
+    "ag.r11.t": "第四层 · 智能科技与智能硬件", "ag.r11.d": "机器人、无人机、自动驾驶、智慧出行与联网设备。",
+    "ag.r12.t": "下午茶与创新展示", "ag.r12.d": "产品演示与自由交流。",
+    "ag.r13.t": "第五层 · AI投资与资本机会", "ag.r13.d": "风险投资、私募股权、家族办公室、初创与数字资产。",
+    "ag.r14.t": "高层讨论 · 从创新到商业化", "ag.r14.d": "AI公司、投资人、企业与政府如何共同推动规模化应用。",
+    "ag.r15.t": "闭幕致辞", "ag.r15.d": "总结全天重点，发出产业协同的行动倡议。",
+    "ag.r16.t": "鸡尾酒会与高端商务交流", "ag.r16.d": "与演讲嘉宾、赞助商、政府代表、投资人及科技领袖深度交流。",
 
-    "spk.eyebrow": "嘉宾阵容", "spk.title": "塑造澳大利亚AI未来的领袖",
+    "spk.eyebrow": "嘉宾阵容", "spk.title": "塑造人工智能经济的领袖。",
     "spk.note": "已邀请 / 拟邀请嘉宾（按姓名首字母排序），名单持续更新，以最终确认为准。",
 
-    "tix.eyebrow": "门票", "tix.title": "锁定早鸟门票",
+    "tix.eyebrow": "门票", "tix.title": "锁定早鸟门票。",
     "tix.note": "早鸟价至2026年6月30日，售罄即止。",
     "tix.toggle.early": "早鸟价", "tix.toggle.standard": "标准价", "tix.from": "起",
-    "tix.forum.t": "论坛门票", "tix.forum.d": "上午洞察 + 下午方案探索",
-    "tix.cocktail.t": "社交酒会门票", "tix.cocktail.d": "傍晚社交酒会 + 机器人科技展",
-    "tix.pkg.t": "论坛 + 酒会套票", "tix.pkg.d": "完整峰会体验——上午、下午与傍晚",
+    "tix.forum.t": "论坛门票", "tix.forum.d": "全天峰会议程 · 覆盖六大层级",
+    "tix.cocktail.t": "社交酒会门票", "tix.cocktail.d": "傍晚鸡尾酒会与高端商务交流",
+    "tix.pkg.t": "论坛 + 酒会套票", "tix.pkg.d": "完整体验——全天议程与傍晚酒会",
     "tix.best": "超值之选 · 立省 $219",
-    "tix.gift": "符合条件的付费门票持有者，获赠价值$199的AI智能礼品。",
     "tix.cta": "购票",
     "tix.platforms": "购票渠道：",
-    "tix.luma": "Luma · 即将开放",
     "tix.eventbrite": "门票由我们的票务合作平台安全处理——点击后将跳转完成购买。",
-    "tix.group.t": "携团队同行。", "tix.group.d": "为派出多位参会者的机构提供团体预订——一支团队，一个日程，一个更清晰的AI采用方向。",
+    "tix.group.t": "携团队同行。", "tix.group.d": "为派出多位参会者的机构提供团体预订——一支团队，一天时间，完整的AI价值链。",
 
-    "ct.eyebrow": "参与合作", "ct.title": "联系峰会团队",
+    "ct.eyebrow": "参与合作", "ct.title": "联系峰会团队。",
     "ct.note": "赞助、演讲机会、合作伙伴或参会注册，欢迎联系我们的团队。",
     "ct.spon.t": "赞助与合作", "ct.reg.t": "注册与参会咨询",
-    "ct.event.t": "活动", "ct.event.v": "2026年8月14日 · ICC Sydney",
+    "ct.event.t": "活动", "ct.event.v": "2026年8月14日 · 悉尼，澳大利亚",
     "ct.general": "综合咨询：",
 
-    "footer.sub": "悉尼 2026", "footer.tag": "从AI认知到商业行动。",
-    "footer.meta": "2026年8月14日 · ICC Sydney · 由澳大利亚财经见闻（AFN）主办",
+    "footer.sub": "2026", "footer.tag": "从能源到智能，从算力到资本。",
+    "footer.meta": "2026年8月14日 · 悉尼，澳大利亚 · 由澳大利亚财经见闻（AFN）主办",
     "footer.copy": "© 2026 澳大利亚财经见闻（Australian Financial News）。保留所有权利。",
-    "footer.disclaimer": "所有信息仅供参考，可能发生变更。议程、嘉宾、票务权益、AI智能礼品供应及活动安排均以主办方最终确认为准。早鸟价限时供应，名额售罄即止。"
+    "footer.disclaimer": "所有信息仅供参考，可能发生变更。议程、嘉宾、场地、票务权益及活动安排均以主办方最终确认为准。早鸟价限时供应，名额售罄即止。"
   };
 
   /* ---------- DOM helpers ---------- */
@@ -134,9 +146,14 @@
     grid.innerHTML = SPEAKERS.map(s => {
       const role = lang === "zh" ? s.role_zh : s.role_en;
       const org = lang === "zh" ? s.org_zh : s.org_en;
+      const img = s.photo
+        ? `<img src="assets/speakers/${s.photo}" alt="${s.name}" loading="lazy" onerror="this.remove()">`
+        : "";
       return `
         <article class="speaker-card">
-          <div class="speaker-photo" style="background:linear-gradient(150deg,${s.grad[0]},${s.grad[1]})">${s.initials}</div>
+          <div class="speaker-photo" style="background:linear-gradient(150deg,${s.grad[0]},${s.grad[1]})">
+            <span class="spk-initials" aria-hidden="true">${s.initials}</span>${img}
+          </div>
           <div class="speaker-info">
             <h3>${s.name}</h3>
             <p class="role">${role}</p>

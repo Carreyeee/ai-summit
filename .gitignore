@@ -3,3 +3,6 @@
 *.pdf
 *.docx
 .claude/settings.local.json
+drive-download-*/
+*.xlsx
+*.zip

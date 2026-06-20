@@ -1,5 +1,5 @@
 /* =====================================================================
-   AI Application Summit Sydney 2026 — Australian Financial News (AFN)
+   AI Summit Sydney 2026 — Australian Financial News (AFN)
    Brand: royal/navy blue gradients, white type, bright-blue accent.
    ===================================================================== */
 
@@ -199,44 +199,44 @@ ul { margin: 0; padding: 0; list-style: none; }
 .about-facts > dl > div { padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .about-facts > dl > div:last-child { border-bottom: 0; padding-bottom: 0; }
 
-/* ---------- Why now / challenges ---------- */
-.why-now { background: var(--navy-800); color: #fff; position: relative; overflow: hidden; }
-.why-now::after { content: ""; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(47,107,240,.5), transparent 70%); filter: blur(50px); }
-.why-now .container { position: relative; z-index: 1; }
-.why-now .eyebrow { color: var(--cyan-300); }
-.why-now .section-title { color: #fff; }
-.challenge-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.challenge-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 28px 24px; backdrop-filter: blur(6px); transition: transform .3s ease, background .3s ease, border-color .3s ease; }
-.challenge-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); border-color: rgba(111,208,255,.5); }
-.ch-no { display: block; font-family: var(--ff-display); font-size: 2.2rem; font-weight: 700; color: var(--cyan-300); line-height: 1; margin-bottom: 12px; }
-.challenge-card h3 { font-size: 1.14rem; color: #fff; margin-bottom: 8px; }
-.challenge-card p { color: var(--muted-light); margin: 0; font-size: .92rem; }
-.why-kicker { margin: 34px auto 0; max-width: 760px; text-align: center; font-weight: 600; color: var(--gold-soft); font-size: 1.1rem; }
+/* ---------- Framework · six layers ---------- */
+.framework { background: var(--navy-800); color: #fff; position: relative; overflow: hidden; }
+.framework::after { content: ""; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(47,107,240,.5), transparent 70%); filter: blur(50px); }
+.framework .container { position: relative; z-index: 1; }
+.framework .eyebrow { color: var(--cyan-300); }
+.framework .section-title { color: #fff; }
+.framework .section-note { color: var(--muted-light); }
+.layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.layer-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 28px 24px; backdrop-filter: blur(6px); transition: transform .3s ease, background .3s ease, border-color .3s ease; }
+.layer-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); border-color: rgba(111,208,255,.5); }
+.ly-no { display: block; font-family: var(--ff-display); font-size: 1.7rem; font-weight: 700; color: var(--cyan-300); line-height: 1; margin-bottom: 12px; }
+.layer-card h3 { font-size: 1.16rem; color: #fff; margin-bottom: 8px; }
+.layer-card p { color: var(--muted-light); margin: 0; font-size: .92rem; }
 
-/* ---------- Agenda ---------- */
-.agenda-flow { margin-top: 14px; font-family: var(--ff-display); font-weight: 600; color: var(--blue-500); letter-spacing: .01em; font-size: clamp(1rem, 1.6vw, 1.15rem); }
-.agenda-blocks { display: grid; gap: 22px; }
-.agenda-block { display: grid; grid-template-columns: 280px 1fr; gap: 30px; background: #fff; border: 1px solid #e3eafb; border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
-.agenda-side { border-right: 2px dashed #d6e0fa; padding-right: 24px; }
-.agenda-period { display: inline-block; font-family: var(--ff-display); font-size: 1.5rem; font-weight: 700; color: var(--blue-500); }
-.agenda-theme { display: block; margin-top: 8px; color: var(--muted); font-weight: 600; font-size: .96rem; }
-.agenda-list { display: grid; gap: 16px; }
-.agenda-list li { padding-left: 22px; position: relative; }
-.agenda-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--grad-accent); box-shadow: 0 0 0 4px rgba(47,107,240,.14); }
-.agenda-list h4 { font-size: 1.05rem; color: var(--ink); margin-bottom: 2px; }
-.agenda-list p { color: var(--muted); margin: 0; font-size: .95rem; }
+/* ---------- Agenda · timeline ---------- */
+.timeline { max-width: 760px; margin: 0 auto; }
+.tl-item { display: grid; grid-template-columns: 56px 1fr; gap: 20px; }
+.tl-time { font-family: var(--ff-display); font-weight: 700; color: var(--blue-500); font-size: .98rem; text-align: right; padding-top: 1px; font-variant-numeric: tabular-nums; }
+.tl-body { border-left: 2px solid #dbe6fb; padding: 0 0 24px 26px; position: relative; }
+.tl-item:last-child .tl-body { padding-bottom: 0; }
+.tl-body::before { content: ""; position: absolute; left: -8px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--grad-accent); box-shadow: 0 0 0 4px var(--paper); }
+.tl-body h4 { font-size: 1.04rem; color: var(--ink); margin-bottom: 2px; }
+.tl-body p { color: var(--muted); margin: 0; font-size: .93rem; }
+.tl-evening .tl-body::before { background: var(--gold); }
+.tl-evening .tl-time { color: #c79212; }
 
 /* ---------- Speakers ---------- */
 .speakers { background: var(--paper-2); }
-.speaker-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.speaker-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
 .speaker-card { background: #fff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid #e3eafb; transition: transform .3s ease, box-shadow .3s ease; }
 .speaker-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.speaker-photo { aspect-ratio: 1 / 1; display: grid; place-items: center; position: relative; color: #fff; font-family: var(--ff-display); font-weight: 700; font-size: 2.6rem; letter-spacing: .02em; }
-.speaker-photo::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px); background-size: 18px 18px; opacity: .6; }
-.speaker-info { padding: 18px 18px 22px; }
-.speaker-info h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 4px; }
-.speaker-info .role { color: var(--blue-500); font-weight: 600; font-size: .86rem; margin: 0 0 2px; }
-.speaker-info .org { color: var(--muted); font-size: .86rem; margin: 0; }
+.speaker-photo { aspect-ratio: 1 / 1; position: relative; overflow: hidden; color: #fff; font-family: var(--ff-display); font-weight: 700; font-size: 2.4rem; letter-spacing: .02em; }
+.speaker-photo .spk-initials { position: absolute; inset: 0; display: grid; place-items: center; }
+.speaker-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.speaker-info { padding: 16px 16px 20px; }
+.speaker-info h3 { font-size: 1.04rem; color: var(--ink); margin-bottom: 4px; }
+.speaker-info .role { color: var(--blue-500); font-weight: 600; font-size: .82rem; margin: 0 0 2px; }
+.speaker-info .org { color: var(--muted); font-size: .82rem; margin: 0; }
 
 /* ---------- Tickets ---------- */
 .tickets { background: var(--paper); }
@@ -317,7 +317,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .speaker-grid { grid-template-columns: repeat(3, 1fr); }
-  .challenge-grid { grid-template-columns: repeat(2, 1fr); }
+  .layer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px) {
@@ -328,9 +328,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
   .about-title { text-align: left; }
   .contact-grid { grid-template-columns: 1fr; }
-  .agenda-block { grid-template-columns: 1fr; gap: 20px; }
-  .agenda-side { border-right: 0; border-bottom: 2px dashed #d6e0fa; padding-right: 0; padding-bottom: 16px; }
-  .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+  .speaker-grid { grid-template-columns: repeat(3, 1fr); }
   .ticket-grid { grid-template-columns: 1fr; }
   .ticket-card.featured { transform: none; order: -1; }
   .ticket-card.featured:hover { transform: translateY(-6px); }
@@ -346,8 +344,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   .cd-unit { min-width: 66px; padding: 12px 6px; }
   .cd-num { font-size: 1.6rem; }
   .countdown { gap: 8px; }
-  .speaker-grid { grid-template-columns: 1fr; }
-  .challenge-grid { grid-template-columns: 1fr; }
+  .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+  .layer-grid { grid-template-columns: 1fr; }
   .ticket-card { padding: 26px 22px; }
+  .tl-item { grid-template-columns: 48px 1fr; gap: 14px; }
+  .tl-time { font-size: .9rem; }
+  .tl-body { padding-left: 20px; }
   .nav-actions .btn-sm { display: none; }
 }
