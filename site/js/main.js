@@ -5,14 +5,17 @@
   "use strict";
 
   /* =====================================================================
-     CONFIG — paste your Eventbrite event URL below to make every
-     "Get Tickets" / "Register" / "Secure Your Ticket" button go live.
-     Example: "https://www.eventbrite.com.au/e/ai-application-summit-sydney-2026-tickets-000000000000"
-     While left empty, those buttons gracefully scroll to the on-page
-     Tickets / Contact sections instead.
+     CONFIG — ticketing links.
+       eventbriteUrl : every [data-buy] button (Register / Get Tickets /
+                       Secure Your Ticket) opens this in a new tab.
+       lumaUrl       : when set, the "Luma" button in the Tickets section
+                       goes live; while empty it shows "coming soon".
+     Just paste the Luma event URL below when you have it — nothing else
+     to change.
      ===================================================================== */
   const CONFIG = {
-    eventbriteUrl: "https://www.eventbrite.com.au/e/2026-tickets-1990168493538"
+    eventbriteUrl: "https://www.eventbrite.com.au/e/2026-tickets-1990168493538",
+    lumaUrl: ""
   };
 
   /* ---------- Speakers (easy to maintain) ---------- */
@@ -47,19 +50,16 @@
   const ZH = {
     "brand.sub": "悉尼 2026 · 由 AFN 主办",
     "nav.about": "关于峰会", "nav.agenda": "议程",
-    "nav.speakers": "嘉宾", "nav.attend": "参会理由", "nav.tickets": "门票",
-    "nav.sponsor": "赞助", "nav.contact": "联系", "nav.register": "立即注册",
+    "nav.speakers": "嘉宾", "nav.tickets": "门票",
+    "nav.contact": "联系", "nav.register": "立即注册",
 
     "hero.eyebrow": "澳大利亚财经见闻（AFN）呈献",
     "hero.title": "2026 悉尼人工智能<br>商业应用峰会",
     "hero.tagline": "让 AI 不再停留于概念，而是真正驱动增长。",
     "hero.date": "2026年8月14日", "hero.venue": "悉尼国际会议中心 ICC Sydney", "hero.host": "AFN 主办",
-    "hero.cta1": "立即购票", "hero.cta2": "成为赞助商",
+    "hero.cta1": "立即购票", "hero.cta2": "查看议程",
     "hero.scroll": "向下了解",
     "cd.days": "天", "cd.hours": "时", "cd.mins": "分", "cd.secs": "秒",
-
-    "stat.reach": "AFN 受众触达", "stat.attendees": "预计参会人数", "stat.vips": "受邀 VIP 嘉宾",
-    "stat.speakers": "演讲与圆桌嘉宾", "stat.communities": "互联社群",
 
     "about.eyebrow": "关于", "about.title": "这不是又一场技术大会，而是一场真正划算的 AI 商业日。",
     "about.p1": "用聚焦的一天，看清 AI 到底能为销售、运营、客服与增长做什么——见到真正做事的人，带走一个方向，而不是又一个热词。",
@@ -97,19 +97,6 @@
     "spk.eyebrow": "嘉宾阵容", "spk.title": "塑造澳大利亚AI未来的领袖",
     "spk.note": "已邀请 / 拟邀请嘉宾（按姓名首字母排序），名单持续更新，以最终确认为准。",
 
-    "gain.eyebrow": "参会理由", "gain.title": "您将收获什么",
-    "gain.1.t": "清晰认知", "gain.1.d": "看清AI在哪些环节创造真实商业价值，又在哪里只是炒作。",
-    "gain.2.t": "商业洞察", "gain.2.d": "看清AI如何提升销售、客服、运营与生产力。",
-    "gain.3.t": "方案发现", "gain.3.d": "对接服务商，体验真正适合你业务的工具。",
-    "gain.4.t": "更优决策", "gain.4.d": "在买工具或选合作伙伴之前，知道该看什么。",
-    "gain.5.t": "商业人脉", "gain.5.d": "在同一个房间里，与领袖、创始人、投资人和实干者连接。",
-    "gain.6.t": "团队对齐", "gain.6.d": "带团队同行，带回的是共识与优先级，而不只是笔记。",
-
-    "who.title": "适合谁参加", "who.sub": "为负责业务增长、生产力、转型、客户互动或技术采用的人士与机构而设计。这不是一场纯技术活动。",
-    "who.1": "企业主与创始人", "who.2": "CEO、董事与高级管理者", "who.3": "销售、市场与客服负责人",
-    "who.4": "运营、人力与财务经理", "who.5": "专业服务提供商与顾问", "who.6": "初创创始人与创业者",
-    "who.7": "投资人、顾问与创新生态伙伴", "who.8": "正在探索AI、自动化或数字化转型的团队",
-
     "tix.eyebrow": "门票", "tix.title": "锁定早鸟门票",
     "tix.note": "早鸟价至2026年6月30日，售罄即止。",
     "tix.toggle.early": "早鸟价", "tix.toggle.standard": "标准价", "tix.from": "起",
@@ -119,38 +106,10 @@
     "tix.best": "超值之选 · 立省 $219",
     "tix.gift": "符合条件的付费门票持有者，获赠价值$199的AI智能礼品。",
     "tix.cta": "购票",
-    "tix.eventbrite": "门票通过 Eventbrite 安全处理——点击后将跳转完成购买。",
+    "tix.platforms": "购票渠道：",
+    "tix.luma": "Luma · 即将开放",
+    "tix.eventbrite": "门票由我们的票务合作平台安全处理——点击后将跳转完成购买。",
     "tix.group.t": "携团队同行。", "tix.group.d": "为派出多位参会者的机构提供团体预订——一支团队，一个日程，一个更清晰的AI采用方向。",
-
-    "spo.eyebrow": "合作与赞助", "spo.title": "让您的品牌站在澳大利亚AI浪潮前沿",
-    "spo.note": "从核心曝光到冠名权与高端权威，权益层层递增。所有价格均为澳元（AUD）。",
-    "spo.w1.t": "触达活跃AI买家", "spo.w1.d": "对接正在评估AI的企业主、C级高管与转型负责人。",
-    "spo.w2.t": "确立品类领导力", "spo.w2.d": "将品牌定位为AI采用与业务转型领域的可信权威。",
-    "spo.w3.t": "获取高质量线索", "spo.w3.d": "通过演讲席位、方案展示、展览与精准配对推动深度对话。",
-    "spo.w4.t": "放大长期曝光", "spo.w4.d": "借助AFN媒体生态与内容矩阵，在会前、会中、会后持续曝光。",
-    "spo.silver": "银牌", "spo.gold": "金牌", "spo.platinum": "白金", "spo.diamond": "钻石", "spo.naming": "冠名权",
-    "spo.popular": "最受欢迎", "spo.premier": "至尊",
-    "spo.f.core": "核心峰会logo展示", "spo.f.web": "官网与EDM邮件logo展示",
-    "spo.f.social": "社交媒体品牌放大", "spo.f.stage": "主舞台背景板logo",
-    "spo.f.pass": "张免费峰会通行证", "spo.f.vip": "个VIP酒会邀请", "spo.f.vips": "个VIP酒会邀请",
-    "spo.f.allsilver": "包含银牌全部权益，另加：", "spo.f.allgold": "包含金牌全部权益，另加：",
-    "spo.f.allplat": "包含白金全部权益，另加：", "spo.f.alldiamond": "包含钻石全部权益，另加：",
-    "spo.f.mc": "主持人现场口头致谢", "spo.f.video": "茶歇品牌视频与logo",
-    "spo.f.foyer": "前厅品牌活动与展览空间", "spo.f.match": "精准商务配对与VIP引荐",
-    "spo.f.panel": "高管圆桌参与席位", "spo.f.highlight": "峰会集锦视频品牌植入",
-    "spo.f.keynote": "专属主旨演讲席位", "spo.f.thought": "思想领导力与媒体专题",
-    "spo.f.category": "品类独家权益（细节另议）", "spo.f.title": "冠名权头部品牌权威",
-    "spo.f.premium": "全触点高端品牌定位", "spo.f.bespoke": "定制化品牌活动（细节另议）",
-    "spo.special.t": "特别赞助机会",
-    "spo.gift.t": "礼品赞助商", "spo.gift.d": "峰会礼品上的独家赞助商logo。",
-    "spo.bag.t": "购物袋赞助商", "spo.bag.d": "官方峰会购物袋上的独家赞助商logo。",
-    "spo.cock.t": "酒会赞助商", "spo.cock.d": "傍晚社交酒会的官方冠名赞助商。",
-    "spo.cats.t": "目标赞助商类别",
-    "spo.cat1": "AI应用、云与企业平台", "spo.cat2": "AI方案提供商与业务自动化",
-    "spo.cat3": "投资与成长资本", "spo.cat4": "专业服务与咨询", "spo.cat5": "政策、产业与生态",
-    "spo.cta.text": "需要完整权益对照表与赞助时间线？", "spo.cta.btn": "索取赞助方案包",
-
-    "partners.label": "汇聚澳大利亚AI生态——横跨商业、科技、投资、政府与学术界",
 
     "ct.eyebrow": "参与合作", "ct.title": "联系峰会团队",
     "ct.note": "赞助、演讲机会、合作伙伴或参会注册，欢迎联系我们的团队。",
@@ -187,15 +146,6 @@
     }).join("");
   }
 
-  /* ---------- Logo wall placeholders ---------- */
-  function renderLogos() {
-    const wall = $("#logoWall");
-    if (!wall) return;
-    let html = "";
-    for (let i = 1; i <= 12; i++) html += `<div class="logo-tile">YOUR&nbsp;LOGO</div>`;
-    wall.innerHTML = html;
-  }
-
   /* ---------- i18n toggle ---------- */
   const i18nEls = [];
   function snapshotEN() {
@@ -204,6 +154,7 @@
   function applyLang(lang) {
     const toZh = lang === "zh";
     i18nEls.forEach(({ el, en }) => {
+      if (el.hasAttribute("data-i18n-lock")) return; // value fixed by JS (e.g. live Luma label)
       const key = el.getAttribute("data-i18n");
       el.innerHTML = toZh && ZH[key] != null ? ZH[key] : en;
     });
@@ -242,31 +193,11 @@
     setInterval(tick, 1000);
   }
 
-  /* ---------- Animated stat counters ---------- */
-  function animateCount(el) {
-    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    const suffix = el.getAttribute("data-suffix") || "";
-    const dur = 1600;
-    const start = performance.now();
-    const fmt = n => n >= 1000 ? n.toLocaleString("en-US") : String(n);
-    function step(now) {
-      const p = Math.min(1, (now - start) / dur);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = fmt(Math.round(target * eased)) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  /* ---------- Scroll reveal + counters ---------- */
+  /* ---------- Scroll reveal ---------- */
   function initObservers() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       $$(".reveal").forEach(el => el.classList.add("in"));
-      $$("[data-count]").forEach(el => {
-        const n = parseInt(el.getAttribute("data-count"), 10) || 0;
-        el.textContent = (n >= 1000 ? n.toLocaleString("en-US") : n) + (el.getAttribute("data-suffix") || "");
-      });
       return;
     }
     const io = new IntersectionObserver((entries, obs) => {
@@ -275,13 +206,6 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     $$(".reveal").forEach(el => io.observe(el));
-
-    const co = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { animateCount(e.target); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.6 });
-    $$("[data-count]").forEach(el => co.observe(el));
   }
 
   /* ---------- Header scroll state ---------- */
@@ -305,14 +229,28 @@
     $$("a", nav).forEach(a => a.addEventListener("click", close));
   }
 
-  /* ---------- Eventbrite ticketing ---------- */
+  /* ---------- Ticketing: Eventbrite (data-buy) + Luma (data-luma) ---------- */
   function initTicketing() {
-    const url = CONFIG.eventbriteUrl;
-    if (!url) return; // not set yet — keep in-page anchor fallbacks
-    $$("[data-buy]").forEach(a => {
-      a.href = url;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
+    const eb = CONFIG.eventbriteUrl;
+    if (eb) {
+      $$("[data-buy]").forEach(a => {
+        a.href = eb;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      });
+    }
+    // Luma: go live only when a URL is configured; otherwise stay "coming soon".
+    const luma = CONFIG.lumaUrl;
+    $$("[data-luma]").forEach(a => {
+      if (luma) {
+        a.href = luma;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.classList.remove("is-soon");
+        a.removeAttribute("aria-disabled");
+        a.textContent = "Luma";
+        a.setAttribute("data-i18n-lock", "1"); // keep "Luma" as the label in both languages
+      }
     });
   }
 
@@ -462,7 +400,6 @@
 
   /* ---------- Init ---------- */
   document.addEventListener("DOMContentLoaded", () => {
-    renderLogos();
     snapshotEN();      // capture English innerHTML before any swap
     initLang();        // sets language (renders speakers)
     initCountdown();
