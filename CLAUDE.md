@@ -39,12 +39,19 @@ energy, compute, applications, smart tech, capital) — not the older
 "AI applications for SMEs" framing. Source of truth is the organiser's Final
 brochure (kept locally, git-ignored).
 
-### Bilingual i18n (EN/中文)
-- English is the default in HTML
-- Chinese translations stored in `ZH` dictionary in `main.js` (~120 keys)
-- All translatable elements have `data-i18n="key"` attributes
-- `applyLang(lang)` swaps text; persisted via `localStorage('ai-summit-lang')`
-- Missing ZH keys gracefully fall back to English
+### Bilingual i18n (EN/中文) — two static pages, for SEO
+- Each language is its own **fully-crawlable static page**: `/` (`index.html`, English,
+  the source of truth) and `/zh.html` (Chinese, **generated**).
+- Chinese strings live in `site/i18n/zh.json` (keyed by `data-i18n="..."`), incl. a
+  `_seo` block for the zh `<title>`/description/OG.
+- `site/tools/build-zh.mjs` bakes `zh.json` into `zh.html` (lang, head SEO, hreflang,
+  toggle flip, every `data-i18n` innerHTML). Run `cd site && node tools/build-zh.mjs`
+  after editing `index.html` or `zh.json`.
+- The header EN/中文 button is a plain `<a>` link between the two pages — **no
+  client-side text swapping** (so crawlers, incl. Baidu, see real Chinese HTML).
+- `main.js` only reads `document.documentElement.lang` (startsWith "zh") to pick the
+  language for the JS-rendered speaker cards.
+- hreflang on both pages: `en`→`/`, `zh-Hans`→`/zh.html`, `x-default`→`/`; sitemap lists both.
 
 ### Ticketing (Eventbrite + Luma)
 - `CONFIG.eventbriteUrl` / `CONFIG.lumaUrl` at the top of `main.js`.

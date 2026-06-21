@@ -64,10 +64,24 @@ Everything below is a quick find-and-edit. Search for the text in the file shown
 
 ### Bilingual text (English / 中文)
 
-English is written directly in `index.html`. The Chinese translation lives in the
-`ZH` dictionary in `site/js/main.js`, keyed by the `data-i18n="..."` attribute on each
-element. To change a piece of Chinese text, find its key in `ZH` and edit the value.
-If a key is missing from `ZH`, the site simply falls back to English — safe by default.
+For SEO, each language is its **own static, crawlable page**:
+- `site/index.html` — English (the source of structure), at `/`
+- `site/zh.html` — Chinese, at `/zh.html` — **generated, do not edit by hand**
+
+The Chinese strings live in **`site/i18n/zh.json`** (keyed by the `data-i18n="..."`
+attribute used in `index.html`). The header EN/中文 button is a plain link between the
+two pages.
+
+**To change Chinese text:** edit `site/i18n/zh.json`, then regenerate:
+
+```bash
+cd site && node tools/build-zh.mjs
+```
+
+**To change English text or structure:** edit `site/index.html`, then regenerate
+`zh.html` with the same command so the two stay in sync. (If you add a new
+`data-i18n="..."` element, add its key to `zh.json` first — the generator warns about
+any key it can't translate and leaves it in English.)
 
 ---
 
