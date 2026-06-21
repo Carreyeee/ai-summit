@@ -1,10 +1,12 @@
-# AI Application Summit Sydney 2026 — Project Onboarding
+# AI Summit Sydney 2026 — Project Onboarding
 
 ## Project Overview
-A **pure static website** (HTML/CSS/JS, no build step, no framework) for the **AI Application Summit Sydney 2026** — a premium, application-led AI business summit.
+A **pure static website** (HTML/CSS/JS, no build step, no framework) for **AI Summit Sydney 2026** — a flagship business, technology and investment summit for the whole AI economy.
 
+- **Name**: AI Summit Sydney 2026 (中文: 2026 悉尼人工智能峰会). *Renamed from the earlier "AI Application Summit" — do not reintroduce the old name.*
+- **Theme**: Powering Australia's AI Economy — "From Energy to Intelligence. From Compute to Capital."
 - **Date**: 14 August 2026
-- **Venue**: ICC Sydney
+- **Venue**: Sydney, Australia (final venue TBC — ICC is no longer asserted)
 - **Organiser**: Australian Financial News (AFN)
 - **Live URL**: https://aisummit-weld.vercel.app
 - **Hosting**: Vercel (static deployment from `site/` folder)
@@ -18,10 +20,12 @@ Sections in order:
 1. Sticky nav (lang toggle + Register CTA)
 2. Hero — cinematic: video background (`assets/hero.mp4`) over an animated
    neural-network `<canvas>` fallback, countdown timer, CTAs
-3. About (theme + "At a glance" facts)
-4. Why Now (four concrete business questions)
-5. Agenda (3 blocks: morning/afternoon/evening)
-6. Speakers grid (JS-injected from array, indicative)
+3. About (positioning + "At a glance" facts)
+4. Framework — the **six layers** of the AI ecosystem (Governance & Policy,
+   Energy, Infrastructure & Compute, AI Applications, Smart Technology,
+   Capital & Investment)
+5. Agenda — a full **timed timeline** (08:30→18:00, ~16 sessions)
+6. Speakers grid (JS-injected from array, real photos in `assets/speakers/`, indicative)
 7. Tickets (3 cards + Eventbrite/Luma platform buttons)
 8. Contact (3 cards + email)
 9. Footer
@@ -30,9 +34,14 @@ Sections in order:
 Experiences" cards, "Why Attend / What You'll Gain", **Sponsorship** (the
 sponsorship kit must NOT be published on the site), and the Partners logo wall.
 
+**Positioning note:** this is the AI *economy* / ecosystem framing (policy,
+energy, compute, applications, smart tech, capital) — not the older
+"AI applications for SMEs" framing. Source of truth is the organiser's Final
+brochure (kept locally, git-ignored).
+
 ### Bilingual i18n (EN/中文)
 - English is the default in HTML
-- Chinese translations stored in `ZH` dictionary in `main.js` (~90 keys)
+- Chinese translations stored in `ZH` dictionary in `main.js` (~120 keys)
 - All translatable elements have `data-i18n="key"` attributes
 - `applyLang(lang)` swaps text; persisted via `localStorage('ai-summit-lang')`
 - Missing ZH keys gracefully fall back to English
@@ -107,10 +116,11 @@ Vercel aliases:
 - Note: WeChat does NOT show OG previews for pasted links — need a "generate share poster" feature (Canvas-based) for WeChat sharing
 
 ## Known TODOs
-1. **Luma URL** — paste into `CONFIG.lumaUrl` in `main.js` when the Luma event is live.
+1. **Speaker titles** — Sachin Shah, Simon Kriss and Yu Liu have photos but placeholder roles ("Profile to be confirmed"); add real titles in the `SPEAKERS` array when known.
 2. **WeChat share poster** — add a "生成分享海报" button (Canvas) for WeChat sharing (WeChat ignores OG previews).
-3. **Placeholder assets** — replace with real materials when available: speaker photos (currently gradient avatars), AFN logo, event photography.
-4. **Social share buttons** — not yet implemented (LinkedIn, Twitter/X, email, etc.).
+3. **Final venue** — currently "Sydney, Australia"; update hero/about/contact/footer + JSON-LD once the venue is confirmed.
+4. **Remaining assets** — AFN logo and event photography when available.
+5. **Social share buttons** — not yet implemented (LinkedIn, Twitter/X, email, etc.).
 
 ## Local Preview
 ```bash

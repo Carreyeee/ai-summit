@@ -1,13 +1,13 @@
-# AI Application Summit 2026 Sydney — Website
+# AI Summit Sydney 2026 — Website
 
-The official landing page for the **AI Application Summit 2026 Sydney**, hosted by
+The official landing page for **AI Summit Sydney 2026**, hosted by
 **Australian Financial News (AFN)**.
 
 - **Date:** 14 August 2026
-- **Venue:** ICC Sydney
-- **Theme:** Empowering Business Growth Through AI Applications
+- **Venue:** Sydney, Australia (final venue to be confirmed)
+- **Theme:** Powering Australia's AI Economy — *From Energy to Intelligence. From Compute to Capital.*
 - **Live site:** https://aisummit-weld.vercel.app
-- **Tickets:** [Eventbrite](https://www.eventbrite.com.au/e/2026-tickets-1990168493538) · Luma (coming soon)
+- **Tickets:** [Eventbrite](https://www.eventbrite.com.au/e/2026-tickets-1990168493538) · [Luma](https://luma.com/m86e2kod)
 
 It's a **single static landing page** — no build step, no framework. Just HTML, CSS
 and one JS file. Anyone can clone it and edit it with a text editor.
@@ -53,10 +53,11 @@ Everything below is a quick find-and-edit. Search for the text in the file shown
 | What | File | How |
 |------|------|-----|
 | **Date / venue / theme** | `site/index.html` | Edit the hero + "At a glance" + footer text. Also update the countdown date in `site/js/main.js` (`initCountdown`) and the `startDate` in the JSON-LD block in `index.html`. |
-| **Agenda** | `site/index.html` | Edit the `#agenda` section (Morning / Afternoon / Evening blocks). |
-| **Speakers** (indicative) | `site/js/main.js` | Edit the `SPEAKERS` array near the top — name, role, org (EN + ZH). Cards render automatically. |
+| **Six-layer framework** | `site/index.html` | Edit the `#framework` section (six `layer-card`s). |
+| **Agenda** | `site/index.html` | Edit the `#agenda` timeline (`tl-item` rows: time + title + focus). |
+| **Speakers** (indicative) | `site/js/main.js` | Edit the `SPEAKERS` array near the top — name, role, org (EN + ZH), and `photo` (a file in `site/assets/speakers/`). Cards render automatically; if a photo is missing it falls back to initials. |
 | **Eventbrite link** | `site/js/main.js` | `CONFIG.eventbriteUrl`. |
-| **Luma link** | `site/js/main.js` | `CONFIG.lumaUrl` — paste the URL and the "coming soon" button goes live automatically. |
+| **Luma link** | `site/js/main.js` | `CONFIG.lumaUrl`. |
 | **Ticket prices** | `site/index.html` | Edit the `data-early` / `data-standard` values in the `#tickets` cards. |
 | **Contact details** | `site/index.html` | Edit the `#contact` section. |
 | **SEO keywords** | `site/index.html` | Edit `<meta name="keywords">` and the description/OG tags in `<head>`. |
